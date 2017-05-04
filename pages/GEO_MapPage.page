@@ -1,0 +1,21 @@
+<apex:page showHeader="false" sidebar="false" controller="GEO_MapPageController">
+    <!--Get API key from https://developers.google.com/maps/documentation/javascript/get-api-key -->
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDyJcokfpD1K08LPaXKUA5ssVfFUNkwgRg"></script>
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock >
+            <apex:outputText value="Location Name"/>
+            <apex:inputText title="Location Name" value="{!location}" />
+            <apex:commandButton value="Submit" action="{!getMapMarkers}" />
+        </apex:pageBlock>
+        <apex:pageBlock title="Map">
+        <body>
+            <apex:map width="100%" height="600px" mapType="roadmap" center="{USA}" zoomLevel="5">
+            <apex:repeat value="{!adHocLocations}" var="adHocLo">
+            <apex:mapMarker title="{!adHocLo.magnitude}" position="{latitude:{!adHocLo.lng},longitude:{!adHocLo.lat}}"/>
+            </apex:repeat>
+            </apex:map> 
+        </body>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
