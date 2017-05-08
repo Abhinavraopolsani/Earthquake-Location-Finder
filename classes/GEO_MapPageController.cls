@@ -48,7 +48,7 @@ public with sharing class GEO_MapPageController  {
         Map<Double, Double> earthquakeMap = new Map<Double, Double>();
         adHocLocations = new List<LocationWrapper>();
         try {
-            String url = 'http://api.geonames.org/earthquakesJSON?north='+ltNorth+'&south='+ltSouth+'&east='+lnEast+'&west='+lnWest+'&username=abhinavpolsani';//Create a username in geonames org for API Calls.
+            String url = 'http://api.geonames.org/earthquakesJSON?north='+ltNorth+'&south='+ltSouth+'&east='+lnEast+'&west='+lnWest+'&username=AbhinavPolsani';//Create a username in geonames org for API Calls.
             HttpRequest req = new HttpRequest();
             req.setHeader('Content-type', 'application/x-www-form-urlencoded'); 
             req.setHeader('Content-length', '0'); 
